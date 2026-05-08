@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">相対アラート アイコン</title>
+  <desc id="desc">濃紺背景に白い時計と通知マークを配置したアイコン</desc>
+  <rect width="512" height="512" rx="112" fill="#111827"/>
+  <circle cx="256" cy="256" r="146" fill="none" stroke="#ffffff" stroke-width="30"/>
+  <line x1="256" y1="256" x2="256" y2="168" stroke="#ffffff" stroke-width="28" stroke-linecap="round"/>
+  <line x1="256" y1="256" x2="330" y2="300" stroke="#ffffff" stroke-width="28" stroke-linecap="round"/>
+  <circle cx="376" cy="136" r="48" fill="#ffffff"/>
+</svg>
