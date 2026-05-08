@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111827" />
+  <title>相対アラート v0.1</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>相対アラート <span>v0.1</span></h1>
+
+    <section class="card">
+      <label for="baseTime">基準時刻 (HH:mm)</label>
+      <div class="time-row">
+        <input id="baseTime" type="text" inputmode="numeric" placeholder="08:20 / 9:05" aria-describedby="timeHelp" />
+        <button id="setNowBtn" type="button">今を入力</button>
+      </div>
+      <p id="timeHelp" class="hint">現在時刻より過去の時刻は翌日扱いになります。</p>
+    </section>
+
+    <section class="card">
+      <label for="presetSelect">プリセット</label>
+      <select id="presetSelect"></select>
+      <button id="previewBtn" type="button">計算してプレビュー</button>
+    </section>
+
+    <section class="card">
+      <h2>計算結果プレビュー</h2>
+      <ul id="previewList" class="list"></ul>
+    </section>
+
+    <section class="card">
+      <h2>通知</h2>
+      <div class="button-grid">
+        <button id="requestPermBtn" type="button">通知許可を確認</button>
+        <button id="test10Btn" type="button">10秒テスト</button>
+        <button id="test20Btn" type="button">20秒テスト</button>
+        <button id="test30Btn" type="button">30秒テスト</button>
+      </div>
+      <p class="hint">通知は Android / Chrome / 省電力設定の影響を受けます。長時間の setTimeout 予約は不安定です。</p>
+    </section>
+
+    <section class="card">
+      <div class="row-between">
+        <h2>セット中アラート</h2>
+        <button id="cancelAllBtn" type="button" class="danger">すべてキャンセル</button>
+      </div>
+      <ul id="activeList" class="list"></ul>
+    </section>
+
+    <p id="status" class="status" aria-live="polite"></p>
+  </main>
+
+  <script src="presets.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+body {
+  margin: 0;
+  background: #f3f4f6;
+  color: #111827;
+}
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 12px;
+}
+h1 { font-size: 1.25rem; margin: 8px 0 12px; }
+h1 span { font-size: 0.9rem; color: #6b7280; }
+.card {
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+label, h2 { font-size: 0.95rem; margin: 0 0 8px; display: block; }
+input, select, button {
+  font: inherit;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #9ca3af;
+}
+input, select { width: 100%; box-sizing: border-box; }
+button { background: #111827; color: #fff; border-color: #111827; }
+button:active { transform: translateY(1px); }
+.time-row { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+.button-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+#previewBtn { margin-top: 8px; width: 100%; }
+.list { list-style: none; padding: 0; margin: 0; }
+.list li { padding: 8px 0; border-bottom: 1px solid #e5e7eb; font-size: 0.92rem; }
+.list li:last-child { border-bottom: none; }
+.hint { font-size: 0.85rem; color: #4b5563; margin: 8px 0 0; }
+.status { margin: 8px 0 20px; font-size: 0.9rem; color: #1f2937; min-height: 1.2em; }
+.row-between { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.danger { background: #b91c1c; border-color: #b91c1c; }
+@media (prefers-color-scheme: dark) {
+  body { background: #111827; color: #f9fafb; }
+  .card { background: #1f2937; border-color: #374151; }
+  .hint, h1 span { color: #9ca3af; }
+  input, select { background: #111827; color: #f9fafb; border-color: #4b5563; }
+}
