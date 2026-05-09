@@ -1,9 +1,3 @@
-
----
-
-# 2. 確定版 app.js
-
-```js
 const STORAGE_KEY = "relative-alert-v01";
 const ACTIVE_KEY = "relative-alert-active-v01";
 
