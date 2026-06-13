@@ -1,6 +1,6 @@
 {
-  "name": "相対アラート",
-  "short_name": "相対アラート",
+  "name": "相対アラーム",
+  "short_name": "相対アラーム",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
