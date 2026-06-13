@@ -28,7 +28,7 @@ h1 span {
 .card {
   background: #fff;
   border: 1px solid #d1d5db;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 12px;
   margin-bottom: 12px;
 }
@@ -55,6 +55,17 @@ select {
   box-sizing: border-box;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 button {
   background: #111827;
   color: #fff;
@@ -71,15 +82,41 @@ button:active {
   gap: 8px;
 }
 
-.button-grid {
+.button-grid,
+.action-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
 
-#previewBtn {
+.action-row {
   margin-top: 8px;
-  width: 100%;
+}
+
+.sound-file-row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.file-button {
+  display: inline-block;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid #111827;
+  border-radius: 8px;
+  background: #111827;
+  color: #fff;
+  text-align: center;
+}
+
+.sound-name {
+  min-width: 0;
+  color: #4b5563;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
 }
 
 .list {
@@ -123,6 +160,18 @@ button:active {
   border-color: #b91c1c;
 }
 
+@media (max-width: 520px) {
+  .button-grid,
+  .action-row {
+    grid-template-columns: 1fr;
+  }
+
+  .time-row,
+  .sound-file-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background: #111827;
@@ -135,7 +184,8 @@ button:active {
   }
 
   .hint,
-  h1 span {
+  h1 span,
+  .sound-name {
     color: #9ca3af;
   }
 
@@ -144,5 +194,9 @@ button:active {
     background: #111827;
     color: #f9fafb;
     border-color: #4b5563;
+  }
+
+  .status {
+    color: #e5e7eb;
   }
 }

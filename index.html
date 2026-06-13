@@ -4,24 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#111827" />
-  <title>相対アラート v0.1</title>
+  <title>相対アラーム v0.3</title>
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="container">
-    <h1>相対アラート <span>v0.1</span></h1>
+    <h1>相対アラーム <span>v0.3</span></h1>
+
+    <section class="card">
+      <h2>音</h2>
+      <label for="alarmSoundSelect">アラーム音</label>
+      <select id="alarmSoundSelect">
+        <option value="classic">内蔵音: 標準</option>
+        <option value="urgent">内蔵音: 強め</option>
+        <option value="slow">内蔵音: ゆっくり</option>
+        <option value="custom">スマホから選んだ音</option>
+      </select>
+      <div class="sound-file-row">
+        <label class="file-button" for="customSoundFile">スマホ内の音を選ぶ</label>
+        <span id="customSoundName" class="sound-name">未選択</span>
+      </div>
+      <input id="customSoundFile" class="visually-hidden" type="file" accept="audio/*" />
+      <div class="button-grid">
+        <button id="enableSoundBtn" type="button">音を有効化</button>
+        <button id="stopSoundBtn" type="button" class="danger">鳴っている音を止める</button>
+      </div>
+      <p class="hint">スマホの標準アラーム音一覧を直接開けない場合があります。その場合は音声ファイルを選んでください。</p>
+    </section>
 
     <section class="card">
       <label for="baseTime">基準時刻 (HH:mm)</label>
       <div class="time-row">
-        <input
-          id="baseTime"
-          type="text"
-          inputmode="numeric"
-          placeholder="08:20 / 9:05"
-          aria-describedby="timeHelp"
-        />
+        <input id="baseTime" type="text" inputmode="numeric" placeholder="08:20 / 9:05" aria-describedby="timeHelp" />
         <button id="setNowBtn" type="button">今を入力</button>
       </div>
       <p id="timeHelp" class="hint">現在時刻より過去の時刻は翌日扱いになります。</p>
@@ -30,7 +45,10 @@
     <section class="card">
       <label for="presetSelect">プリセット</label>
       <select id="presetSelect"></select>
-      <button id="previewBtn" type="button">計算してプレビュー</button>
+      <div class="action-row">
+        <button id="previewBtn" type="button">計算してプレビュー</button>
+        <button id="schedulePreviewBtn" type="button">プレビューをアラームセット</button>
+      </div>
     </section>
 
     <section class="card">
@@ -39,24 +57,20 @@
     </section>
 
     <section class="card">
-      <h2>通知</h2>
+      <h2>テストアラーム</h2>
       <div class="button-grid">
-        <button id="requestPermBtn" type="button">通知許可を確認</button>
         <button id="test10Btn" type="button">10秒テスト</button>
         <button id="test20Btn" type="button">20秒テスト</button>
         <button id="test30Btn" type="button">30秒テスト</button>
       </div>
-      <p class="hint">
-        通知は Android / Chrome / 省電力設定の影響を受けます。長時間の setTimeout 予約は不安定です。
-      </p>
+      <p class="hint">テストは選択中の音で鳴り続けます。鳴ったら停止ボタンで止めてください。</p>
     </section>
 
     <section class="card">
       <div class="row-between">
-        <h2>セット中アラート</h2>
+        <h2>セット中アラーム</h2>
         <button id="cancelAllBtn" type="button" class="danger">すべてキャンセル</button>
       </div>
-      <p class="hint">v0.1では、主に通知テストのセット状況を表示します。</p>
       <ul id="activeList" class="list"></ul>
     </section>
 

@@ -1,4 +1,4 @@
-const CACHE_NAME = "relative-alert-v01-cache";
+const CACHE_NAME = "relative-alarm-v03-cache";
 const ASSETS = [
   "./",
   "./index.html",
